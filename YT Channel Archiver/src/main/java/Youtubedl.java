@@ -8,10 +8,8 @@ import java.nio.file.Files;
 public class Youtubedl {
     private static final String apiKey = "AIzaSyCGOypB2LrWuCj9eD5DoNIIe6kGbErPYH8";
 
-
-
     public static void main() {
-        downloadAll("NerdsInc");
+        downloadAll(new YoutubeScraper().phraseChannel("NerdsInc"));
 
     }
 
@@ -37,17 +35,12 @@ public class Youtubedl {
         }
     }
 
-    public static void downloadAll(String channelID) {
+    public static void downloadAll(YTChannel channel) {
 
-        String path = System.getProperty("user.dir") + "/Youtube Content/" + channelNick;
+        String path = System.getProperty("user.dir") + "/Youtube Content/" + channel.channelNick;
+        path = path.replace(".", "");
 
-        String playlistURL = "https://www.youtube.com/playlist?list=UU" + og.get("og:url").substring(34);
-
-
-        File directory = new File(path);
-        if (!directory.exists()) {
-            directory.mkdirs();
-        }
+        String playlistURL = "https://www.youtube.com/playlist?list=UU" + channel.channelID.substring(2);
 
         downloadFromURL(playlistURL, path);
         //cleanUp(path); //If I end up converting after downloading
