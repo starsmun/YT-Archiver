@@ -8,7 +8,7 @@ import java.util.*;
 
 
 public class Youtubedl {
-    private static final String apiKey = "AIzaSyCGOypB2LrWuCj9eD5DoNIIe6kGbErPYH8";
+    private static final String apiKey = //Removed old key because of gitguardian detection, wasn't an active one anyways;
     private static Gui gui;
 
     public static void main(Gui gui) {
