@@ -11,6 +11,8 @@ Before you begin, ensure you have met the following requirements:
 * You have a recent version of [Maven](https://maven.apache.org/download.cgi) installed (version 3.6.0 or higher is recommended).
 * You have read the [License](LICENSE) terms for using this project.
 
+This project also uses python for one of the optional functions, although the related function hasn't been fully implimented, it is recommended to install python and ensure that it is on path.
+
 All the required dependencies are managed by Maven and listed in the `pom.xml` file. Maven will automatically download and manage these dependencies when you build the project.
 
 ## License
